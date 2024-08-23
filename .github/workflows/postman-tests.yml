@@ -19,11 +19,10 @@ jobs:
         with:
           node-version: 'lts/*'  # This ensures you use the latest LTS version of Node.js
 
-      - name: Install Newman
-        run: npm install -g newman
-
-      - name: Install Newman HTML Reporter
-        run: npm install -g newman-reporter-html
+      - name: Install Newman and Reporter
+        run: |
+          npm install -g newman@latest
+          npm install -g newman-reporter-html@latest
 
       - name: Create Results Directory
         run: mkdir -p results
