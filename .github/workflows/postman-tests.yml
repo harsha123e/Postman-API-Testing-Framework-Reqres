@@ -24,9 +24,9 @@ jobs:
 
     - name: Run Postman Collection
       run: |
-        newman run path/to/your-postman-collection.json \
-          --reporters cli,junit \
-          --reporter-junit-export results/TESTS-results.xml
+        newman run Reqres\ REST\ API\ Test.postman_collection.json \
+              --reporters cli,junit \
+              --reporter-junit-export results/TESTS-results.xml
           
     - name: Upload Test Results
       if: always()
