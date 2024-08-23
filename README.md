@@ -1,4 +1,4 @@
-# Postman API Testing Framework for Reqres End points
+# Postman API Testing Framework for Reqres End Points
 
 ## Overview
 
