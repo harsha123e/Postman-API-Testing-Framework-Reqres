@@ -52,7 +52,3 @@ The project is integrated with GitHub Actions to automate the execution of the t
 ## Conclusion
 
 This API testing framework provides a robust foundation for testing the Reqres API, ensuring that all critical endpoints are thoroughly validated.
-
----
-
-This README reflects the basic scenarios you've implemented and explains the project's scope and usage.
