@@ -17,22 +17,25 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 'lts/*'  # This ensures you use the latest LTS version of Node.js
+          node-version: 'lts/*'  # This ensures you use the latest LTS version of Node.js
 
       - name: Install Newman
         run: npm install -g newman
 
+      - name: Install Newman HTML Reporter
+        run: npm install -g newman-reporter-html
+
       - name: Create Results Directory
         run: mkdir -p results
 
-      - name: Run Postman Collection and Generate HTML Report
+      - name: Run Postman Collection and Generate Reports
         run: |
           newman run Reqres_REST_API_Test.postman_collection.json \
             --reporters cli,html,json \
             --reporter-html-export results/TESTS-results.html \
             --reporter-json-export results/TESTS-results.json
 
-      - name: List results directory
+      - name: List Results Directory
         run: ls -la results/
 
       - name: Upload Test Results (HTML and JSON)
