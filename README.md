@@ -49,6 +49,33 @@ The project is integrated with GitHub Actions to automate the execution of the t
 2. Import the Postman collection from the `collections` folder.
 3. Run the collection in Postman or set up a GitHub Actions workflow to automate the process.
 
+## Sample Script
+```js
+pm.test("Response status code is 200", function () {
+  pm.expect(pm.response.code).to.equal(200);
+});
+
+
+pm.test("Response time is less than 600ms", function () {
+  pm.expect(pm.response.responseTime).to.be.below(600);
+});
+
+
+pm.test("Validate the response schema", function () {
+    const responseData = pm.response.json();
+    
+    pm.expect(responseData).to.be.an('object');
+    pm.expect(responseData).to.have.property('name');
+    pm.expect(responseData).to.have.property('job');
+    pm.expect(responseData).to.have.property('updatedAt');
+});
+
+```
+
+## Report in HTML
+![image](https://github.com/user-attachments/assets/d8d5ad14-0124-4e96-93f1-404e1fa031e1)
+
+
 ## Conclusion
 
 This API testing framework provides a robust foundation for testing the Reqres API, ensuring that all critical endpoints are thoroughly validated.
